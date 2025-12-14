@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incomplete Theory Of Universal Truth</title>
+<style>
+ /* Search Bar */
+ .search-bar-cell {
+    text-align: center;
+    border: 0px solid white;
+    background-color: gray;
+ }
+
+ .search-container {
+    position: relative;
+    background: white;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+ }
+
+ #searchBox {
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid black;
+    padding: 20px;
+    font-weight: bold;
+    width: 80%;
+    max-width: 600px;
+ }
+
+ #searchInfo {
+    font-size: 18px;
+    color: #555;
+    padding: 20px 0;
+    font-weight: bold;
+ }
+
+ .highlight {
+    background-color: yellow !important;
+    color: black !important;
+    position: relative;
+ }
+
+ /* Full-width horizontal marker line - fixed position */
+ .search-marker {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: yellow;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 0.9);
+    opacity: 0.9;
+ }
+
+ body, .page-content {
+    position: relative;
+ }
+</style>
+</head>
+<body>
+<div class="page-content">
+<table width="100%">
+ <tr><td>
+<div class="search-bar-cell">
+ <div class="search-container">
+ <input type="text" id="searchBox" placeholder="··· Search Text ···">
+ <div id="searchInfo">0 matches</div>
+ </div>
+ </div>
+ </td></tr>
+ <tr><td style="padding: 20px;">
+<p>
+I am Amit. मेरा नाम अमित है।
+</p>
+ </td></tr>
+</table>
+</div>
+
+<script>
+const searchBox = document.getElementById('searchBox');
+const searchInfo = document.getElementById('searchInfo');
+
+let previousHighlights = [];
+let rafId = null; // For requestAnimationFrame throttling
+
+// Clear old highlights and markers
+function clearPreviousHighlights() {
+  previousHighlights.forEach(span => {
+    if (span && span.parentNode) {
+      // Remove associated marker
+      if (span.markerElement && span.markerElement.parentNode) {
+        span.markerElement.parentNode.removeChild(span.markerElement);
+      }
+      const parent = span.parentNode;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    }
+  });
+  previousHighlights = [];
+}
+
+// Escape regex special characters
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Get all visible text nodes
+function getAllTextNodes() {
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode: node => {
+        const parent = node.parentNode;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        if (parent.closest && (
+          parent.closest('script') ||
+          parent.closest('style') ||
+          parent.closest('.search-container')
+        )) return NodeFilter.FILTER_REJECT;
+        if (node.nodeValue.trim() === '') return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    }
+  );
+
+  const nodes = [];
+  let node;
+  while (node = walker.nextNode()) nodes.push(node);
+  return nodes;
+}
+
+// Update all marker positions efficiently
+function updateAllMarkers() {
+  previousHighlights.forEach(span => {
+    if (span.markerElement && span.isConnected) {
+      const rect = span.getBoundingClientRect();
+      const midY = rect.top + rect.height / 2;
+      span.markerElement.style.top = midY + 'px';
+    }
+  });
+  rafId = null;
+}
+
+// Throttled update using requestAnimationFrame
+function scheduleUpdate() {
+  if (!rafId) {
+    rafId = requestAnimationFrame(() => {
+      updateAllMarkers();
+    });
+  }
+}
+
+function performSearch() {
+  let term = searchBox.value.trim();
+
+  clearPreviousHighlights();
+
+  if (term.length < 1) {
+    searchInfo.textContent = '0 matches';
+    return;
+  }
+
+  if (/^[^a-zA-Z0-9\u0900-\u097F]+$/.test(term)) {
+    searchInfo.textContent = 'Special characters only';
+    return;
+  }
+
+  const regex = new RegExp('(' + escapeRegExp(term) + ')', 'gi');
+  const textNodes = getAllTextNodes();
+  let matchCount = 0;
+
+  textNodes.forEach(textNode => {
+    const text = textNode.nodeValue;
+    if (!regex.test(text)) return;
+
+    const parts = text.split(regex);
+    const fragment = document.createDocumentFragment();
+
+    parts.forEach(part => {
+      if (part && regex.test(part)) {
+        const span = document.createElement('span');
+        span.className = 'highlight';
+        span.textContent = part;
+
+        // Create fixed-position full-width line
+        const marker = document.createElement('div');
+        marker.className = 'search-marker';
+        document.body.appendChild(marker); // Append to body for true fixed full-width
+
+        span.markerElement = marker;
+        fragment.appendChild(span);
+        previousHighlights.push(span);
+        matchCount++;
+      } else if (part) {
+        fragment.appendChild(document.createTextNode(part));
+      }
+    });
+
+    textNode.parentNode.replaceChild(fragment, textNode);
+  });
+
+  // Initial positioning
+  updateAllMarkers();
+
+  // Listen to scroll and resize with throttling
+  window.addEventListener('scroll', scheduleUpdate);
+  window.addEventListener('resize', scheduleUpdate);
+
+  searchInfo.textContent = matchCount === 0
+    ? `"${term}" not found`
+    : `${matchCount} match${matchCount > 1 ? 'es' : ''}`;
+}
+
+searchBox.addEventListener('input', performSearch);
+
+// Clear on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    searchBox.value = '';
+    clearPreviousHighlights();
+    window.removeEventListener('scroll', scheduleUpdate);
+    window.removeEventListener('resize', scheduleUpdate);
+    searchInfo.textContent = '0 matches';
+    searchBox.focus();
+  }
+});
+
+// Focus search box with Ctrl/Cmd + K
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    searchBox.focus();
+    searchBox.select();
+  }
+});
+</script>
+</body>
+</html>
