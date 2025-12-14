@@ -1,1 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incomplete Theory Of Universal Truth</title>
+    <style>
+    /* Search Bar */
+    .search-bar-cell {
+        text-align: center;
+        border: 0px solid white;
+        background-color: gray;
+    }
+    .search-container {
+        position: relative;
+        background: white;
+        z-index: 9999;
+        font-family: Arial, sans-serif;
+    }
+    #searchBox {
+        text-align: center;
+        font-size: 18px;
+        border: 1px solid black;
+        padding: 20px;
+        font-weight: bold;
+        width: 80%;
+        max-width: 600px;
+    }
+    #searchInfo {
+        font-size: 18px;
+        color: #555;
+        padding: 20px 0;
+        font-weight: bold;
+    }
+    .highlight {
+        background-color: yellow !important;
+        color: black !important;
+        position: relative;
+    }
+    /* Full-width horizontal marker line - fixed position */
+    .search-marker {
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: yellow;
+        pointer-events: none;
+        z-index: 10;
+        box-shadow: 0 0 8px rgba(255, 255, 0, 0.9);
+        opacity: 0.9;
+    }
+    body, .page-content {
+        position: relative;
+    }
+    .content-section {
+        padding: 20px;
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 30px;
+    }
+    .file-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    </style>
+</head>
+<body>
+<div class="page-content">
+<table width="100%">
+    <tr><td>
+<div class="search-bar-cell">
+    <div class="search-container">
+    <input type="text" id="searchBox" placeholder="··· Search Text ···">
+    <div id="searchInfo">0 matches</div>
+    </div>
+</div>
+    </td></tr>
+    <tr><td>
+        <div id="content-container">
+            <!-- Content will be loaded here -->
+            <p>Loading content...</p>
+        </div>
+    </td></tr>
+</table>
+</div>
 
+<script>
+const searchBox = document.getElementById('searchBox');
+const searchInfo = document.getElementById('searchInfo');
+const contentContainer = document.getElementById('content-container');
+
+let previousHighlights = [];
+let rafId = null;
+
+// Clear old highlights and markers
+function clearPreviousHighlights() {
+    previousHighlights.forEach(span => {
+        if (span && span.parentNode) {
+            if (span.markerElement && span.markerElement.parentNode) {
+                span.markerElement.parentNode.removeChild(span.markerElement);
+            }
+            const parent = span.parentNode;
+            parent.replaceChild(document.createTextNode(span.textContent), span);
+            parent.normalize();
+        }
+    });
+    previousHighlights = [];
+}
+
+// Escape regex special characters
+function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Get all visible text nodes excluding search bar and scripts
+function getAllTextNodes() {
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode: node => {
+                const parent = node.parentNode;
+                if (!parent) return NodeFilter.FILTER_REJECT;
+                if (parent.closest && (
+                    parent.closest('script') ||
+                    parent.closest('style') ||
+                    parent.closest('.search-container')
+                )) return NodeFilter.FILTER_REJECT;
+                if (node.nodeValue.trim() === '') return NodeFilter.FILTER_SKIP;
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        }
+    );
+
+    const nodes = [];
+    let node;
+    while (node = walker.nextNode()) nodes.push(node);
+    return nodes;
+}
+
+// Update all marker positions
+function updateAllMarkers() {
+    previousHighlights.forEach(span => {
+        if (span.markerElement && span.isConnected) {
+            const rect = span.getBoundingClientRect();
+            const midY = rect.top + rect.height / 2;
+            span.markerElement.style.top = midY + 'px';
+        }
+    });
+    rafId = null;
+}
+
+function scheduleUpdate() {
+    if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+            updateAllMarkers();
+        });
+    }
+}
+
+function performSearch() {
+    let term = searchBox.value.trim();
+
+    clearPreviousHighlights();
+
+    if (term.length < 1) {
+        searchInfo.textContent = '0 matches';
+        return;
+    }
+
+    if (/^[^a-zA-Z0-9\u0900-\u097F]+$/.test(term)) {
+        searchInfo.textContent = 'Special characters only';
+        return;
+    }
+
+    const regex = new RegExp('(' + escapeRegExp(term) + ')', 'gi');
+    const textNodes = getAllTextNodes();
+    let matchCount = 0;
+
+    textNodes.forEach(textNode => {
+        const text = textNode.nodeValue;
+        if (!regex.test(text)) return;
+
+        const parts = text.split(regex);
+        const fragment = document.createDocumentFragment();
+
+        parts.forEach(part => {
+            if (part && regex.test(part)) {
+                const span = document.createElement('span');
+                span.className = 'highlight';
+                span.textContent = part;
+
+                const marker = document.createElement('div');
+                marker.className = 'search-marker';
+                document.body.appendChild(marker);
+
+                span.markerElement = marker;
+                fragment.appendChild(span);
+                previousHighlights.push(span);
+                matchCount++;
+            } else if (part) {
+                fragment.appendChild(document.createTextNode(part));
+            }
+        });
+
+        textNode.parentNode.replaceChild(fragment, textNode);
+    });
+
+    updateAllMarkers();
+
+    window.addEventListener('scroll', scheduleUpdate);
+    window.addEventListener('resize', scheduleUpdate);
+
+    searchInfo.textContent = matchCount === 0
+        ? `"${term}" not found`
+        : `${matchCount} match${matchCount > 1 ? 'es' : ''}`;
+}
+
+// File names to load - UPDATE THIS ARRAY WITH YOUR ACTUAL .txt FILES
+const files = ['file1.txt', 'file2.txt', 'file3.txt'];  // Add or remove as needed
+
+let loadedCount = 0;
+
+function loadFile(file) {
+    fetch(file)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('File not found');
+            }
+            return response.text();
+        })
+        .then(text => {
+            const section = document.createElement('div');
+            section.className = 'content-section';
+
+            const title = document.createElement('div');
+            title.className = 'file-title';
+            title.textContent = file;
+            section.appendChild(title);
+
+            const content = document.createElement('pre');
+            content.style.whiteSpace = 'pre-wrap';
+            content.style.wordWrap = 'break-word';
+            content.textContent = text;
+            section.appendChild(content);
+
+            contentContainer.appendChild(section);
+
+            loadedCount++;
+            if (loadedCount === files.length) {
+                const loadingMsg = contentContainer.querySelector('p');
+                if (loadingMsg) loadingMsg.remove();
+            }
+        })
+        .catch(err => {
+            console.error(`Error loading ${file}:`, err);
+            const section = document.createElement('div');
+            section.className = 'content-section';
+            section.innerHTML = `<p style="color:red;">Error loading ${file}: ${err.message}</p>`;
+            contentContainer.appendChild(section);
+
+            loadedCount++;
+            if (loadedCount === files.length) {
+                const loadingMsg = contentContainer.querySelector('p');
+                if (loadingMsg) loadingMsg.remove();
+            }
+        });
+}
+
+// Load all files
+files.forEach(loadFile);
+
+searchBox.addEventListener('input', performSearch);
+
+// Clear on Escape
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        searchBox.value = '';
+        clearPreviousHighlights();
+        window.removeEventListener('scroll', scheduleUpdate);
+        window.removeEventListener('resize', scheduleUpdate);
+        searchInfo.textContent = '0 matches';
+        searchBox.focus();
+    }
+});
+
+// Focus search box with Ctrl/Cmd + K
+document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        searchBox.focus();
+        searchBox.select();
+    }
+});
+</script>
+</body>
+  </html>
