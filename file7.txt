@@ -1,4 +1,144 @@
 --- Vocabulary Part 7 ---
 
+U:
+
+ultimate (अल्टीमेट): अंतिम (antim) / सर्वश्रेष्ठ | आख़िरी (aakhiri) / आला तरीन (aala tareen)
+unacceptable (अनएक्सेप्टेबल): अस्वीकार्य (asveekaary) | ना-क़ाबिल-ए-क़बूल (na-qabil-e-qabool)
+uncertainty (अनसर्टेनिटी): अनिश्चितता (anashchayata) | ग़ैर-यक़ीनी सूरत (ghair-yaqeeni soorat)
+undergo (अंडरगो): गुजरना (guzarna) / झेलना | गुज़रना (guzarna) / बर्दाश्त करना
+undergraduate (अंडरग्रेजुएट): स्नातक (snaatak) (डिग्री से पहले का छात्र) | स्नातक (snaatak)
+underlying (अंडरलाइंग): अंतर्निहित (antarnihit) | बुनियादी (bunayaadi) / पोशीदा (posheeda)
+undermine (अंडरमाइन): कमज़ोर करना (kamazor karna) | कमज़ोर करना (kamazor karna)
+undertake (अंडरटेक): ज़िम्मेदारी लेना (zimmedaaree lena) | बीड़ा उठाना (beeda uthaana) / ज़िम्मे उठाना
+undoubtedly (अनडाउटेडली): निस्संदेह (nissandeh) | बिना-शक़ (bina-shaq) / ला-रैब (la-raib)
+unfold (अनफ़ोल्ड): प्रकट होना (prakat hona) / खोलना | वाज़ेह होना (wazeh hona) / खुलना (khulna)
+unfortunate (अनफॉर्चूनेट): दुर्भाग्यपूर्ण (durbhaagyapoorn) | बदक़िस्मत (badqismat)
+unify (यूनिफाई): एकीकृत करना (ekeekrit karna) | मुत्तहिद करना (muttahid karna)
+unite (यूनाइट): इकट्ठा करना ( इकट्ठा करना) | मुत्तहिद होना (muttahid hona) / जोड़ना
+unity (यूनिटी): एकता (ekata) | इत्तेहाद (ittehaad)
+universal (यूनिवर्सल): सार्वभौमिक (saarvabhaumik) | आफ़ाक़ी (aafaqi) / सार्वभौमिक
+unprecedented (अनप्रिसिडेंटेड): अभूतपूर्व (abhootapoorv) | बेमिसाल (bemisal) / अनोखा (anooha)
+unveil (अनवेल): अनावरण करना (anaavaran karna) | नक़ाब उठाना (naqaab uthaana) / इंक़िशाफ़ करना
+upcoming (अपकमिंग): आगामी (aagaamee) | आने वाला (aane wala)
+upgrade (अपग्रेड): उन्नत करना (unnat karna) | दर्जा बढ़ाना (darja badhaana)
+uphold (अपहोल्ड): समर्थन करना (samarthan karna) | बरक़रार रखना (barqaraar rakhna)
+urgent (अर्जेंट): अति आवश्यक (ati aavashyak) | ज़रूरी (zaroori) / फ़ौरी (fauri)
+usage (यूसेज): उपयोग (upayog) | इस्तेमाल (istemal)
+useless (यूज़लेस): बेकार (bekaar) | निकम्मा (nikamma) / फ़ुज़ूल (fuzool)
+utility (यूटिलिटी): उपयोगिता (upayogita) | अफ़ादियत (afaadiyat) / फ़ायदा (fayda)
+utilize (यूटिलाइज): उपयोग करना (upayog karna) | इस्तेमाल करना (istemal karna)
+utterly (अटरली): पूरी तरह से (pooree tarah se) | मुकम्मल तौर पर (mukammal taur par)
+
+V:
+
+vacuum (वैक्यूम): शून्य स्थान (shoonya sthaan) | ख़ला (khala)
+vague (वेग): अस्पष्ट (asplasht) | मुबहम (mubham) / धुंधला (dhundhla)
+valid (वैलिड): मान्य (maany) | जाइज़ (jaiz) / दुरुस्त (durust)
+validity (वैलिडिटी): मान्यता (maanyata) | जवाज़ (jawaz) / जाइज़ होना
+vanish (वैनिश): गायब होना (gaayab hona) | ग़ायब होना (ghaayab hona)
+variable (वैरिएबल): परिवर्तनशील (parivartanasheel) | मुतग़य्यर (mutaghayyar) / बदलने वाला
+variation (वैरिएशन): बदलाव (badalaav) | तग़य्युर (taghayyur) / फ़र्क़ (farq)
+varied (वैर्रीड): विविध (vividh) | मुख़्तलिफ़ (mukhtalif)
+vein (वेन): नस (nas) | रग (rag) / नस (nas)
+venture (वेंचर): साहसिक कार्य (saahasik kaary) | मुहिम (muheem) / जोखिम का काम
+verbal (वर्बल): मौखिक (maukhik) | ज़बानी (zabaani)
+verdict (वर्डिक्ट): निर्णय (nirnay) | फ़ैसला (faisla)
+verify (वेरिफाई): सत्यापित करना (satyaapit karna) | तस्दीक़ करना (tasdeeq karna)
+verse (वर्स): पद्य (pady) / छंद | शे'र (shehr) / आयत (aayat)
+versus (वर्सेस): बनाम (banaam) | मुक़ाबले में (muqable mein) / बनाम (banaam)
+vertical (वर्टिकल): लंबवत (lambavat) | उमोदी (umoodi) / सीधा खड़ा
+vessel (वेसल): पात्र (paatr) / जहाज़ | बर्तन (bartan) / बहरी जहाज़ (bahri jahaaz)
+veteran (वेटरन): अनुभवी (anubhavee) | मंझा हुआ (manjha hua) / तजुरबाकार
+viable (वायबल): व्यावहारिक (vyaavahaarik) | अमली तौर पर मुमकिन (amli taur par mumkin)
+vibrant (वाइब्रेंट): जीवंत (jeevant) | पुर-जोश (pur-josh) / चुलबुला (chulbula)
+vice (वाइस): बुराई (buraai) / उप (up) | ऐब (aib) / बुराई (buraai) / नाएब (naayab)
+vicious (विशस): दुष्ट (dusht) | शातिर (shaatir) / ज़ालिम (zaalim)
+viewpoint (व्यूप्वाइंट): दृष्टिकोण (drishtikon) | नज़रिया (nazariya)
+villager (विलेजर): ग्रामीण (graameen) | देहाती (dehaati) / गाँव वाला
+violate (वायलेट): उल्लंघन करना (ullanghan karna) | ख़िलाफ़-वर्ज़ी करना (khilaf-varzi karna)
+violation (वायलेशन): उल्लंघन (ullanghan) | ख़िलाफ़-वर्ज़ी (khilaf-varzi)
+virtue (वर्च्यू): गुण (gun) | नेकी (neki) / फ़ज़ीलत (fazeelat)
+visa (वीज़ा): वीज़ा (visa) | वीज़ा (visa) / अनुमति पत्र
+visible (विज़िबल): दृश्य (drishy) | ज़ाहिर (zaahir) / अयाँ (ayan)
+vocal (वोकल): मुखर (mukhar) | आवाज़ उठाने वाला / बोलचाल का
+voluntary (वॉलंटरी): स्वैच्छिक (svaichhhik) | रज़ाकाराना (razaakaarana)
+voting (वोटिंग): मतदान (matadaan) | राय-दही (rai-dahi) / वोट डालना
+vow (वाउ): मन्नत (mannat) / प्रतिज्ञा | मन्नत (mannat) / अहद (ahd)
+vulnerability (वल्नरेबिलिटी): संवेदनशीलता (sanvedanasheelta) | कमज़ोरी (kamzoori)
+vulnerable (वल्नरेबल): असुरक्षित (asurakshit) | कमज़ोर (kamzoor) / ज़द में होना
+
+W:
+
+wander (वांडर): भटकना (bhatakana) | आवारा फिरना (aawaara phirna)
+ward (वार्ड): वार्ड (ward) / कक्ष | वार्ड (ward) / कमरा (kamra)
+warehouse (वेयरहाउस): गोदाम (godaam) | गोदाम (godaam) / माल-गोदाम
+warfare (वॉरफेयर): युद्ध (yuddh) | जंग (jang) / लड़ाई (ladai)
+warming (वॉर्मिंग): तपन (tapan) | गर्माहट (garmaahat)
+warrant (वारंट): अधिपत्र (adhipatr) / वारंट | वारंट (warrant) / परवाना (parwana)
+warrior (वारियर): योद्धा (yoddha) | जंगजू (jangjoo) / मुजाहिद (mujaahid)
+weaken (वीकन): कमज़ोर करना (kamazor karna) | कमज़ोर करना (kamazor karna)
+weave (वीव): बुनना (bunana) | बुनना (bunana)
+weed (वीड): खरपतवार (kharapatavaar) | जंगली घास (jangli ghaas)
+weekly (वीकली): साप्ताहिक (saaptaahik) | हफ़्तावार (haftawaar)
+weird (वियर्ड): अजीब (ajeeb) | अनोखा (anootha) / अजीब (ajeeb)
+welfare (वेलफेयर): कल्याण (kalyaan) | बहबूद (bahbood) / फ़लाह (falaah)
+well (वेल): कुआँ (kuan) / अच्छा | कुआँ (kuan) / बेहतर (behtar)
+well-being (वेल-बीइंग): भलाई (bhalaai) / स्वास्थ्य | ख़ैरियत (khairiyat) / अफ़ियत (aafiyat)
+whatsoever (व्हाटसोएवर): जो कुछ भी (jo kuchh bhee) | जो कुछ भी (jo kuchh bhee)
+wheat (व्हीट): गेहूं (gehoon) | गंदुम (gandum)
+whereby (वियरबाय): जिसके द्वारा (jiske dvaara) | जिसके ज़रिए (jiske zariye)
+whilst (व्हाइल्स्ट): जबकि (jabakee) | इस दौरान (is dauran) / जब कि
+whip (व्हिप): कोड़ा (koda) / चाबुक | कोड़ा (koda) / चाबुक (chaabuk)
+whoever (हूएवर): जो कोई भी (jo koee bhee) | जो कोई भी (jo koee bhee)
+wholly (होली): पूरी तरह से (pooree tarah se) | मुकम्मल तौर पर (mukammal taur par)
+widen (वाइडन): चौड़ा करना (chauda karna) | वसी करना (wasee karna) / चौड़ा करना
+widespread (वाइडस्प्रेड): व्यापक (vyaapak) | दूर-दूर तक फैला हुआ (door-door tak phaila hua)
+widow (विडो): विधवा (vidhava) | बेवा (bewa)
+width (विड्थ): चौड़ाई (chaudaai) | अर्ज़ (arz) / चौड़ाई (chaudaai)
+willingness (विलिंगनेस): इच्छा (ichchha) / तत्परता | रज़ामंदी (razaamandi)
+wipe (वाइप): पोंछना (ponchhana) | पोंछना (ponchhana) / साफ़ करना
+wisdom (विजडम): बुद्धिमत्ता (buddhimatta) | हिकमत (hikmat) / अक़्ल (aql)
+wit (विट): हाजिरजवाबी (haajirajavaabee) | अक़्ल (aql) / ज़हानत (zahanat)
+withdraw (विद्ड्रॉ): वापस लेना (vaapas lena) | वापस लेना (vaapas lena)
+withdrawal (विद्ड्रॉअल): वापसी (vaapasee) | वापसी (vaapasee)
+workforce (वर्कफ़ोर्स): कार्यबल (kaaryabal) | अमला (amla) / काम करने वाले लोग
+workout (वर्कआउट): कसरत (kasarat) | वर्ज़िश (varzish)
+workplace (वर्कप्लेस): कार्यस्थल (kaaryasthal) | काम की जगह (kaam ki jagah)
+workshop (वर्कशॉप): कार्यशाला (kaaryashaala) | कार्यशाला (kaaryashaala) / कारख़ाना
+worm (वर्म): कीड़ा (keeda) | कीड़ा (keeda)
+worship (वर्शिप): पूजा (pooja) | इबादत (ibaadat) / परस्तिश (parastish)
+worthwhile (वर्थव्हाइल): सार्थक (saarthak) | फ़ायदेमंद (fayedamand) / कीमती (qeemati)
+worthy (वर्दी): योग्य (yogya) / लायक़ | क़ाबिल (qabil) / लायक़ (layag)
+wrist (रिस्ट): कलाई (kalaace) | कलाई (kalaace)
+
+Y:
+
+yard (यार्ड): गज (gaj) / आंगन | गज़ (gaz) / अहाता (ahaata)
+yarn (यार्न): सूत (soot) / धागा | धागा (dhaaga) / सूत (soot)
+yawn (यौन): उबासी (ubaasee) | जमाई (jamaai) / उबासी (ubaasee)
+yearn (यर्न): तड़पना (tadapana) / लालसा | तड़पना (tadapana) / चाहत रखना
+yell (येल): चिल्लाना (chillaana) | चीख़ना (cheekhna)
+yellow (येलो): पीला (peela) | पीला (peela) / ज़रद (zard)
+yield (यील्ड): पैदावार (paidavaar) / झुकना | पैदावार (paidawaar) / हार मानना
+yoga (योगा): योग (yog) | योग (yog)
+yoke (योक): जुआ (jua) (बैलगाड़ी का) | जुआ (jua) / ग़ुलामी का तौक़
+yolk (योल्क): अंडे की जर्दी (ande kee jardee) | अंडे की ज़र्दी (ande ki zardi)
+youngster (यंगस्टर): युवा (yuva) / नौजवान | नौजवान (naujawan)
+youth (यूथ): जवानी (javaanee) / युवावस्था | जवानी (javaanee) / शबाब (shabaab)
+
+Z:
+
+zeal (जील): उत्साह (utsaah) | जज़्बा (jazba) / शौक़ (shauq)
+zealous (जेलस): उत्साही (utsaahi) | सरगर्म (sargarm) / पुर-जोश (pur-josh)
+zenith (जेनिथ): शीर्ष बिंदु (sheersh bindu) | उरूज (urooj) / औज (auj)
+zero (ज़ीरो): शून्य (shoonya) | सिफ़र (sifar)
+zest (जेस्ट): उत्साह (utsaah) / उमंग | उमंग (umang) / शौक़ (shauq)
+zigzag (ज़िगज़ैग): टेढ़ा-मेढ़ा (tedha-medha) | टेढ़ा-मेढ़ा (tedha-medha)
+zinc (ज़िंक): जस्ता (jasta) | जस्ता (jasta) / ज़िंक (zinc)
+zip (ज़िप): चेन (chain) / ज़िप | ज़िप (zip)
+zone (ज़ोन): क्षेत्र (kshetra) | इलाक़ा (ilaqa) / ख़ित्ता (khitta)
+zoo (ज़ू): चिड़ियाघर (chidiyaaghar) | चिड़ियाघर (chidiyaaghar)
+zoology (ज़ूलॉजी): जंतु विज्ञान (jantu vigyaan) | इल्म-ए-हैवानात (ilm-e-haiwanaat)
+zoom (ज़ूम): तेज़ी से बढ़ना / बड़ा करना | तेज़ी से बड़ा करना (zoom)
 
 --- End of Part ---
